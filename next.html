@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You'r Almost Done!</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .package {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 90%;
+            max-width: 400px;
+            display: inline-block;
+        }
+
+        .package img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            background: #27ae60;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .buy-btn:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title"></h1>
+
+    <div id="packages"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const hosting = params.get("hosting");
+        const title = document.getElementById("title");
+        const packages = document.getElementById("packages");
+
+        let options = [];
+
+        if (hosting === "def") {
+            title.innerText = "Select V";
+            options = [
+                { icon: "nor.png", name: "Normal Version Of Default", price: "10 $", link: "https://www.paypal.com/paypalme/AntoniW606/10USD" },
+                { icon: "dev.png", name: "DEV Version Of Default (Popular)", price: "15 $", link: "https://www.paypal.com/paypalme/AntoniW606/15USD" },
+            ];
+        } else if (hosting === "pro") {
+            title.innerText = "Select V";
+            options = [
+                { icon: "norp.png", name: "Normal Version Of PRO", price: "20 $", link: "https://www.paypal.com/paypalme/AntoniW606/20USD" },
+                { icon: "prop.png", name: "DEV Version Of PRO (Very Popular)", price: "25 $", link: "https://www.paypal.com/paypalme/AntoniW606/25USD" },
+            ];
+        }
+
+        options.forEach(opt => {
+            packages.innerHTML += `<div class="package">
+                <img src="${opt.icon}" alt="${opt.name}">
+                <h3>${opt.name}</h3>
+                <p>${opt.price}</p>
+                <a class="buy-btn" href="${opt.link}" target="_blank">Buy</a>
+            </div>`;
+        });
+    </script>
+
+</body>
+</html>

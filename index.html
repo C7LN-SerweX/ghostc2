@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost C2 - Buy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 270px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .product:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .product img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 1.4em;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 1em;
+            color: #ddd;
+            line-height: 1.4;
+        }
+
+        .buy-btn {
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            border: none;
+            color: white;
+            padding: 12px 18px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 12px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #e67e22, #c0392b);
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Wybierz hosting dla swojego serwera</h1>
+
+    <div class="container">
+        <div class="product">
+            <img src="nor.png" alt="DEFAULT">
+            <h3>GHOSTC2</h3>
+            <p>Default Version.</p>
+            <a href="next.html?hosting=def" class="buy-btn">Buy</a>
+        </div>
+
+        <div class="product">
+            <img src="norp.png" alt="PRO">
+            <h3>[VIP] GhostC2</h3>
+            <p>Premium Version Of GHOSTC2</p>
+            <a href="next.html?hosting=pro" class="buy-btn">Buy</a>
+        </div>
+
+</body>
+</html>
